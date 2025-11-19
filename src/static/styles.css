@@ -88,23 +88,46 @@ section h3 {
 }
 
 .activity-card .participants ul {
-  list-style: disc;
-  padding-left: 20px;
+  list-style: none;
+  padding-left: 0;
   margin: 0;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.activity-card .participants li {
-  margin-bottom: 6px;
+.activity-card .participants li.participant-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(232,234,246,0.6), rgba(226,230,250,0.4));
+  border-radius: 20px;
+  padding: 6px 10px;
   font-size: 14px;
   color: #444;
-  /* make each participant look like a soft badge while keeping the bullet */
-  display: list-item;
-  list-style-position: inside;
-  padding-left: 6px;
-  background: linear-gradient(180deg, rgba(232,234,246,0.6), rgba(226,230,250,0.4));
-  border-radius: 8px;
-  padding: 6px 10px;
+  white-space: nowrap;
+}
+
+.activity-card .participants .participant-email {
+  margin-right: 6px;
+}
+
+.activity-card .participants .delete-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 2px 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  min-width: auto;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.activity-card .participants .delete-btn:hover {
+  background-color: #c92a2a;
 }
 
 /* small muted text when there are no participants */
@@ -128,6 +151,44 @@ button {
 
 button:hover {
   background-color: #3949ab;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #1a237e;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #1a237e;
+  box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+}
+
+#signup-form button {
+  margin-top: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
 }
 
 .message {
