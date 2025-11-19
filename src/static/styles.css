@@ -74,23 +74,68 @@ section h3 {
   margin-bottom: 8px;
 }
 
-.form-group {
-  margin-bottom: 15px;
+/* Participants section inside activity cards */
+.activity-card .participants {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed #eee;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+.activity-card .participants h5 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #333;
 }
 
-.form-group input,
-.form-group select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+.activity-card .participants ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.activity-card .participants li.participant-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(232,234,246,0.6), rgba(226,230,250,0.4));
+  border-radius: 20px;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: #444;
+  white-space: nowrap;
+}
+
+.activity-card .participants .participant-email {
+  margin-right: 6px;
+}
+
+.activity-card .participants .delete-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 2px 8px;
   font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  min-width: auto;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.activity-card .participants .delete-btn:hover {
+  background-color: #c92a2a;
+}
+
+/* small muted text when there are no participants */
+.activity-card .participants .none {
+  font-style: italic;
+  color: #777;
+  background: transparent;
+  padding: 0;
 }
 
 button {
@@ -106,6 +151,44 @@ button {
 
 button:hover {
   background-color: #3949ab;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #1a237e;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #1a237e;
+  box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+}
+
+#signup-form button {
+  margin-top: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
 }
 
 .message {
